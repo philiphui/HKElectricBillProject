@@ -23,7 +23,7 @@ def item_B2_action():
     label.pack(padx=300, pady=10)
     listbox = Listbox(window_01)
     listbox.pack(side=LEFT, fill=BOTH, expand=1)
-    cur.execute('SELECT * FROM METER m LEFT JOIN ADDRESS c  ON m.billchineseaddressid = c.addressid LEFT JOIN ADDRESS e ON m.billenglishaddressid = e.addressid')
+    cur.execute('SELECT * FROM METER m LEFT JOIN ADDRESS c  ON m.servicechineseaddressid = c.addressid LEFT JOIN ADDRESS e ON m.serviceenglishaddressid = e.addressid')
     for row in cur.fetchall():
         listbox.insert(END, row)
 
